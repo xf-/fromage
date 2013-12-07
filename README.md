@@ -29,6 +29,7 @@ use this extension yet, but feel free to browse source code and read this docume
   form extensions to fit your needs.
 * Call your own controllers, also from an existing extension, in order to process the submitted data - which means you can often
   use it instead of actual plugins, to make forms content editors can configure in great detail.
+* Use content elements inside the form; these content elements being edited as nested content elements from fx Fluidcontent.
 * Create things like search forms (e.g. forms which send variables to other plugins, other pages, etc).
 
 ## Fromage CANNOT...
