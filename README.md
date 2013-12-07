@@ -43,6 +43,14 @@ use this extension yet, but feel free to browse source code and read this docume
 >
 > ![Structure editing experience](Documentation/Screenshots/1.png)
 
+> _Using content elements nested inside form fields' structure_
+>
+> ![Using content elements nested inside form fields' structure](Documentation/Screenshots/4.png)
+
+> _Editing content in nested content areas added contained in the form structure_
+>
+> ![Editing content in nested content areas added contained in the form structure](Documentation/Screenshots/5.png)
+
 > _Data Pipes management_
 >
 > ![Pipe management](Documentation/Screenshots/2.png)
