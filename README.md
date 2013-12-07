@@ -59,6 +59,31 @@ use this extension yet, but feel free to browse source code and read this docume
 >
 > ![Default template rendering, Twitter Bootstrap without any CSS class names](Documentation/Screenshots/3.png)
 
+## Basic FAQ
+
+### Does it build on FlexForm XML - and why not relations/records?
+
+I'm glad you asked. The current version does indeed use FlexForm XML to store the settings content editors apply. Why not proper
+IRRE then? Simply because this is planned to be added to Flux with a script to automate migration. In other words: it's XML right
+now, but the final version will in fact be using proper IRRE (like every last other Flux implementation out there will, at that
+time, be able to do instead of using XML).
+
+### When will this be available?
+
+Also happy you asked __that__. The plan is: along with Flux 7.0 a stable version should be available. Flux 7.0 is scheduled to
+be released along with TYPO3 CMS 6.2 LTS (and will be optimised for it, too).
+
+### I really, really can't wait. I must try this - now!
+
+In that case, my impatient friend: [pull this merge request to your local repository](https://github.com/FluidTYPO3/flux/pull/376)
+and be ready to also pull and checkout the ``dev-namespaces`` branches of `EXT:fluidpages` and `EXT:fluidcontent`. After that, you
+most likely will receive a PHP warning about private/protected access to a static `$cache` variable; edit the class(es) throwing
+this error and remove the static `$cache` property. Check out this repository - on `master` - and clear all caches. You should now
+be able to insert a **Fromage: Form** plugin instance and configure its components.
+
+That's all the help you get at this time. Of course, in the not so distant future all you will need to do is download and install
+`EXT:fromage` and you will be all set to go. But right now, you still need a bit of skill and patience to get it running.
+
 ## Concept
 
 Fromage approaches forms by abstracting the concept of "forms" in a way that can be defined like this:
