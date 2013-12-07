@@ -36,6 +36,20 @@ use this extension yet, but feel free to browse source code and read this docume
 * Solve every possible use case. Sometimes you do need a custom plugin. Fromage tries to reduce the need for custom plugins, not
   remove it altogether.
 
+## Teaser screenshots
+
+> _Structure editing experience_
+>
+> ![Structure editing experience](Documentation/Screenshots/1.png)
+
+> _Data Pipes management_
+>
+> ![Pipe management](Documentation/Screenshots/2.png)
+
+> _Default template, rendered with Twitter Bootstrap CSS applied but using no CSS class names_
+>
+> ![Default template rendering, Twitter Bootstrap without any CSS class names](Documentation/Screenshots/3.png)
+
 ## Concept
 
 Fromage approaches forms by abstracting the concept of "forms" in a way that can be defined like this:
