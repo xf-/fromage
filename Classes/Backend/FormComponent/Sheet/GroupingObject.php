@@ -3,7 +3,7 @@ namespace FluidTYPO3\Fromage\Backend\FormComponent\Sheet;
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2013 Claus Due <claus@wildside.dk>, Wildside A/S
+ *  (c) 2013 Claus Due <claus@namelesscoder.net>
  *
  *  All rights reserved
  *
