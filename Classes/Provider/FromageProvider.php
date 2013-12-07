@@ -25,6 +25,7 @@ namespace FluidTYPO3\Fromage\Provider;
  ***************************************************************/
 
 use FluidTYPO3\Flux\Form;
+use FluidTYPO3\Flux\Form\Container\Grid;
 use FluidTYPO3\Flux\Form\Container\Sheet;
 use FluidTYPO3\Flux\Provider\AbstractProvider;
 use FluidTYPO3\Flux\Provider\ProviderInterface;
@@ -66,18 +67,61 @@ class FromageProvider extends AbstractProvider implements ProviderInterface {
 	protected $contentObjectType = 'fromage_form';
 
 	/**
+	 * @var string
+	 */
+	protected $templatePathAndFilename = 'EXT:fromage/Resources/Private/Templates/Form/Form.html';
+
+	/**
 	 * @param array $row
 	 * @return Form
 	 */
 	public function getForm(array $row = array()) {
+		$extensionKey = $this->getExtensionKey($row);
 		$form = Form::create();
-		$form->setExtensionName('fromage');
+		$form->setExtensionName($extensionKey);
 		$form->setId('form');
 		$form->setLocalLanguageFileRelativePath($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fromage']['setup']['languageFileRelativePath']);
 		$this->createStructureSheet($form);
 		$this->createPipeSheet($form, 'pipesIn');
 		$this->createPipeSheet($form, 'pipesOut');
 		return $form;
+	}
+
+	/**
+	 * @param array $row
+	 * @return Grid|\FluidTYPO3\Flux\Provider\FluidTYPO3\Flux\Form\Container\Grid
+	 */
+	public function getGrid(array $row) {
+		$extensionKey = $this->getExtensionKey($row);
+		$values = $this->getFlexFormValues($row);
+		$areas = $this->recursivelyFetchAllContentAreaNames($values['structure']);
+		/** @var Grid $grid */
+		$grid = Grid::create();
+		$grid->setLocalLanguageFileRelativePath($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fromage']['setup']['languageFileRelativePath']);
+		$grid->setExtensionName($extensionKey);
+		foreach ($areas as $areaName) {
+			$grid->createContainer('Row', 'row')->createContainer('Column', 'column')->createContainer('Content', $areaName);
+		}
+		return $grid;
+	}
+
+	/**
+	 * @param array $structure
+	 * @return array
+	 */
+	protected function recursivelyFetchAllContentAreaNames($structure) {
+		$names = array();
+		if (TRUE === is_array($structure)) {
+			foreach ($structure as $index => $subValue) {
+				if ($index === 'content' && TRUE === is_array($subValue) && 1 === count($subValue) && TRUE === isset($subValue['name'])) {
+					array_push($names, $subValue['name']);
+				} else {
+					$names = array_merge($names, $this->recursivelyFetchAllContentAreaNames($subValue));
+				}
+			}
+		}
+		$names = array_unique($names);
+		return $names;
 	}
 
 	/**
@@ -108,8 +152,8 @@ class FromageProvider extends AbstractProvider implements ProviderInterface {
 		foreach ($values['pipesOut'] as $pipe) {
 			$content[] = $this->renderPreviewFloatBlock($pipe['pipe']['name'], 'test', 'Pipe');
 		}
-		#$content[] = '<h4 style="clear: both;">Pipes</h4>';
 		$content[] = '<div style="clear: both;"></div>';
+		$content[] = array_pop(parent::getPreview($row));
 		return array(NULL, implode(LF, $content));
 	}
 
