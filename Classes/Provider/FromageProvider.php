@@ -27,6 +27,7 @@ namespace FluidTYPO3\Fromage\Provider;
 use FluidTYPO3\Flux\Form;
 use FluidTYPO3\Flux\Form\Container\Sheet;
 use FluidTYPO3\Flux\Provider\AbstractProvider;
+use FluidTYPO3\Flux\Provider\ProviderInterface;
 use FluidTYPO3\Fromage\Core;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -37,7 +38,7 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
  *
  * @package Fromage
  */
-class FromageProvider extends AbstractProvider {
+class FromageProvider extends AbstractProvider implements ProviderInterface {
 
 	/**
 	 * @var integer
@@ -68,7 +69,7 @@ class FromageProvider extends AbstractProvider {
 	 * @param array $row
 	 * @return Form
 	 */
-	public function getForm(array $row) {
+	public function getForm(array $row = array()) {
 		$form = Form::create();
 		$form->setExtensionName('fromage');
 		$form->setId('form');

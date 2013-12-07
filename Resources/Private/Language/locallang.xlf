@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <xliff version="1.0">
-  <file source-language="en" datatype="plaintext" original="messages" product-name="fromage" date="2013-12-06T23:15:31+01:00">
+  <file source-language="en" datatype="plaintext" original="messages" product-name="fromage" date="2013-12-07T23:21:24+01:00">
     <header/>
     <body>
       <trans-unit id="flux.form.sheets.options">
@@ -30,11 +30,38 @@
       <trans-unit id="flux.form.objects.text" xml:space="preserve">
         <source>Text</source>
       </trans-unit>
-      <trans-unit id="flux.form.fields.type" xml:space="preserve">
-        <source>Type</source>
+      <trans-unit id="flux.form.objects.select" xml:space="preserve">
+        <source>Select</source>
+      </trans-unit>
+      <trans-unit id="flux.form.objects.checkbox" xml:space="preserve">
+        <source>Checkbox</source>
       </trans-unit>
       <trans-unit id="flux.form.objects.grouping" xml:space="preserve">
         <source>Grouping</source>
+      </trans-unit>
+      <trans-unit id="flux.form.fields.type" xml:space="preserve">
+        <source>Type</source>
+      </trans-unit>
+      <trans-unit id="flux.form.fields.required" xml:space="preserve">
+        <source>Required field</source>
+      </trans-unit>
+      <trans-unit id="flux.form.fields.label" xml:space="preserve">
+        <source>Label, human-readable</source>
+      </trans-unit>
+      <trans-unit id="flux.form.fields.checked" xml:space="preserve">
+        <source>Checked by default</source>
+      </trans-unit>
+      <trans-unit id="flux.form.fields.items" xml:space="preserve">
+        <source>Selectable values (CSV here or custom options below)</source>
+      </trans-unit>
+      <trans-unit id="flux.form.objects.item" xml:space="preserve">
+        <source>Option</source>
+      </trans-unit>
+      <trans-unit id="flux.form.fields.value" xml:space="preserve">
+        <source>Value</source>
+      </trans-unit>
+      <trans-unit id="flux.form.fields.default" xml:space="preserve">
+        <source>Default value</source>
       </trans-unit>
     </body>
   </file>

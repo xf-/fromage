@@ -19,6 +19,8 @@ if (!defined('TYPO3_MODE')) {
 // native field type registrations. Added using simple names which are easy to target (see Core class' doc comment)
 \FluidTYPO3\Fromage\Core::registerFieldObject('input');
 \FluidTYPO3\Fromage\Core::registerFieldObject('text');
+\FluidTYPO3\Fromage\Core::registerFieldObject('checkbox');
+\FluidTYPO3\Fromage\Core::registerFieldObject('select');
 
 // native sheet types, there's only one of these and it is called "Grouping" and allows all fields to be used
 \FluidTYPO3\Fromage\Core::registerSheetObject('grouping');

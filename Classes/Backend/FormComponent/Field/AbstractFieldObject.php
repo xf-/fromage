@@ -39,10 +39,14 @@ use FluidTYPO3\Flux\Form\Container\Object;
 class AbstractFieldObject extends Object {
 
 	/**
-	 * @return void
+	 * CONSTRUCTOR
 	 */
 	public function initializeObject() {
 		$this->setLocalLanguageFileRelativePath($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fromage']['setup']['languageFileRelativePath']);
+		$this->createField('Input', 'name');
+		$this->createField('Input', 'label');
+		$this->createField('Input', 'default');
+		$this->createField('Checkbox', 'required');
 	}
 
 }

@@ -25,17 +25,29 @@ namespace FluidTYPO3\Fromage\Backend\FormComponent\Field;
  ***************************************************************/
 
 /**
- * Input Field Object
+ * Select Field Object
  *
- * Predefined Form component for adding Input field objects.
+ * Predefined Form component for adding Select field objects.
  *
  * @package Flux
  */
-class InputObject extends AbstractFieldObject {
+class SelectObject extends AbstractFieldObject {
 
 	/**
 	 * @var string
 	 */
-	protected $name = 'input';
+	protected $name = 'select';
+
+	/**
+	 * @return void
+	 */
+	public function initializeObject() {
+		parent::initializeObject();
+		$this->createField('Input', 'items');
+		$section = $this->createContainer('Section', 'customItems');
+		$item = $section->createContainer('Object', 'item');
+		$item->createField('Input', 'label');
+		$item->createField('Input', 'value');
+	}
 
 }

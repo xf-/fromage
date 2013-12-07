@@ -25,17 +25,25 @@ namespace FluidTYPO3\Fromage\Backend\FormComponent\Field;
  ***************************************************************/
 
 /**
- * Input Field Object
+ * Checkbox Field Object
  *
- * Predefined Form component for adding Input field objects.
+ * Predefined Form component for adding Checkbox field objects.
  *
  * @package Flux
  */
-class InputObject extends AbstractFieldObject {
+class CheckboxObject extends AbstractFieldObject {
 
 	/**
 	 * @var string
 	 */
-	protected $name = 'input';
+	protected $name = 'checkbox';
+
+	/**
+	 * @return void
+	 */
+	public function initializeObject() {
+		parent::initializeObject();
+		$this->createField('Checkbox', 'checked');
+	}
 
 }

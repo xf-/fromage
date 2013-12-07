@@ -24,8 +24,6 @@ namespace FluidTYPO3\Fromage\Backend\FormComponent\Field;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use FluidTYPO3\Flux\Form\Container\Object;
-
 /**
  * Input Field Object
  *
@@ -33,7 +31,7 @@ use FluidTYPO3\Flux\Form\Container\Object;
  *
  * @package Flux
  */
-class TextObject extends Object {
+class TextObject extends AbstractFieldObject {
 
 	/**
 	 * @var string

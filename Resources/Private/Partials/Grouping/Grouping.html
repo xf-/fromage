@@ -1,0 +1,20 @@
+<fieldset>
+	<legend>
+	<f:if condition="{group.label}">
+		<f:then>
+			<f:translate key="{group.name}" extensionName="{provider.form.extensionName}" default="{group.label}" />
+		</f:then>
+		<f:else>
+			{group.name}
+		</f:else>
+	</f:if>
+	</legend>
+	<f:for each="{group.fields}" as="fieldContainer">
+		<f:for each="{fieldContainer}" as="field" key="fieldType">
+			<label for="{group.name}-{field.name}">
+				<f:translate key="{group.name}.{field.name}" extensionName="{provider.form.extensionName}" default="{field.label}" />
+			</label>
+			<f:render partial="Fields/{fieldType}" arguments="{_all}" />
+		</f:for>
+	</f:for>
+</fieldset>
