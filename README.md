@@ -5,9 +5,8 @@ Fromage: Frontend Flux Forms
 
 # Caveat Emptor!
 
-This extension both uses highly experimental code, some not yet published. This README contains references to code and classes
-still not released - the target release of a stable (perhaps beta) is scheduled to happen same time as Flux 7.0. Do not try to
-use this extension yet, but feel free to browse source code and read this document.
+This extension both uses highly experimental code, some not yet published on TER. The target release of a stable (perhaps beta)
+is scheduled to happen same time as Flux 7.0.
 
 ## Fromage IS...
 
