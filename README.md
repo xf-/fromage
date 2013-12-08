@@ -75,11 +75,9 @@ be released along with TYPO3 CMS 6.2 LTS (and will be optimised for it, too).
 
 ### I really, really can't wait. I must try this - now!
 
-In that case, my impatient friend: [pull this merge request to your local repository](https://github.com/FluidTYPO3/flux/pull/376)
-and be ready to also pull and checkout the ``dev-namespaces`` branches of `EXT:fluidpages` and `EXT:fluidcontent`. After that, you
-most likely will receive a PHP warning about private/protected access to a static `$cache` variable; edit the class(es) throwing
-this error and remove the static `$cache` property. Check out this repository - on `master` - and clear all caches. You should now
-be able to insert a **Fromage: Form** plugin instance and configure its components.
+Alright then. Be sure you check out the most recent Flux master (and if you use fluidpages/fluidcontent, those as well). To be
+safe, don't try this on a production site just yet. Instead, take the opportunity to try the TYPO3 CMS 6.2-dev git master. Flux
+demands it ;)
 
 That's all the help you get at this time. Of course, in the not so distant future all you will need to do is download and install
 `EXT:fromage` and you will be all set to go. But right now, you still need a bit of skill and patience to get it running.
