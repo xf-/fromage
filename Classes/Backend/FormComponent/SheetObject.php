@@ -44,7 +44,9 @@ class SheetObject extends Object {
 	 */
 	public function initializeObject() {
 		$this->setLocalLanguageFileRelativePath($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fromage']['setup']['languageFileRelativePath']);
-		$this->createField('Input', 'name')->setDefault($this->name);
+		$this->createField('Input', 'name')
+				->setDefault($this->name);
+		$this->createField('Input', 'label');
 		$this->createContainer('Section', 'fields');
 	}
 

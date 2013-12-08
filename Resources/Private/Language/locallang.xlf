@@ -24,6 +24,9 @@
       <trans-unit id="flux.form.objects.pipe" xml:space="preserve">
         <source>Data Pipe</source>
       </trans-unit>
+      <trans-unit id="flux.form.objects.content" xml:space="preserve">
+        <source>Content area</source>
+      </trans-unit>
       <trans-unit id="flux.form.objects.input" xml:space="preserve">
         <source>Input</source>
       </trans-unit>
@@ -32,6 +35,9 @@
       </trans-unit>
       <trans-unit id="flux.form.objects.select" xml:space="preserve">
         <source>Select</source>
+      </trans-unit>
+      <trans-unit id="flux.form.objects.relation" xml:space="preserve">
+        <source>Relation</source>
       </trans-unit>
       <trans-unit id="flux.form.objects.checkbox" xml:space="preserve">
         <source>Checkbox</source>
@@ -46,7 +52,7 @@
         <source>Required field</source>
       </trans-unit>
       <trans-unit id="flux.form.fields.label" xml:space="preserve">
-        <source>Label, human-readable</source>
+        <source>Label, LLL:EXT supported (empty value will use "name" and try auto-translation)</source>
       </trans-unit>
       <trans-unit id="flux.form.fields.checked" xml:space="preserve">
         <source>Checked by default</source>
@@ -63,8 +69,17 @@
       <trans-unit id="flux.form.fields.default" xml:space="preserve">
         <source>Default value</source>
       </trans-unit>
-      <trans-unit id="flux.form.objects.content" xml:space="preserve">
-        <source>Content area</source>
+      <trans-unit id="flux.form.fields.table" xml:space="preserve">
+        <source>Table</source>
+      </trans-unit>
+      <trans-unit id="flux.form.fields.size" xml:space="preserve">
+        <source>Size</source>
+      </trans-unit>
+      <trans-unit id="flux.form.fields.multiple" xml:space="preserve">
+        <source>Allow multiple selections</source>
+      </trans-unit>
+      <trans-unit id="flux.form.fields.enable" xml:space="preserve">
+        <source>Enabled</source>
       </trans-unit>
       <trans-unit id="flux.form" xml:space="preserve">
         <source>Form</source>

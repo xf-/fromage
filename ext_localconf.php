@@ -22,6 +22,7 @@ if (!defined('TYPO3_MODE')) {
 \FluidTYPO3\Fromage\Core::registerFieldObject('text');
 \FluidTYPO3\Fromage\Core::registerFieldObject('checkbox');
 \FluidTYPO3\Fromage\Core::registerFieldObject('select');
+\FluidTYPO3\Fromage\Core::registerFieldObject('relation');
 
 // native sheet types, there's only one of these and it is called "Grouping" and allows all fields to be used
 \FluidTYPO3\Fromage\Core::registerSheetObject('grouping');

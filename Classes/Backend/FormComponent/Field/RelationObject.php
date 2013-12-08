@@ -24,31 +24,31 @@ namespace FluidTYPO3\Fromage\Backend\FormComponent\Field;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use FluidTYPO3\Flux\Form\Container\Object;
-
 /**
- * Base class, Field-type Form Objects
+ * Relation Field Object
  *
- * Common base shared by for example Input, Select,
- * Text etc. field objects used in backend forms to
- * create a structure which translates to a Flux "Field"
- * component from the Flux Form namespace.
+ * Predefined Form component for adding Relation record selection field objects.
  *
  * @package Flux
  */
-class AbstractFieldObject extends Object {
+class RelationObject extends SelectObject {
 
 	/**
-	 * CONSTRUCTOR
+	 * @var string
+	 */
+	protected $name = 'relation';
+
+	/**
+	 * @return void
 	 */
 	public function initializeObject() {
-		$this->setLocalLanguageFileRelativePath($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fromage']['setup']['languageFileRelativePath']);
-		$this->createField('Checkbox', 'enable')
-				->setDefault(1);
-		$this->createField('Input', 'name');
-		$this->createField('Input', 'label');
-		$this->createField('Input', 'default');
-		$this->createField('Checkbox', 'required');
+		parent::initializeObject();
+		$this->remove('items');
+		$this->remove('customItems');
+		$tables = array_keys($GLOBALS['TCA']);
+		sort($tables);
+		$items = array_combine($tables, $tables);
+		$this->createField('Select', 'table')->setItems($items);
 	}
 
 }

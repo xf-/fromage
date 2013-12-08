@@ -43,11 +43,17 @@ class SelectObject extends AbstractFieldObject {
 	 */
 	public function initializeObject() {
 		parent::initializeObject();
+		$this->createField('Input', 'size')
+				->setDefault(1)
+				->setValidate('trim,int')
+				->setSize(3);
 		$this->createField('Input', 'items');
 		$section = $this->createContainer('Section', 'customItems');
 		$item = $section->createContainer('Object', 'item');
 		$item->createField('Input', 'label');
 		$item->createField('Input', 'value');
+		$this->createField('Checkbox', 'multiple')
+				->setDefault('');
 	}
 
 }

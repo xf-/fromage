@@ -11,10 +11,12 @@
 	</legend>
 	<f:for each="{group.fields}" as="fieldContainer">
 		<f:for each="{fieldContainer}" as="field" key="fieldType">
-			<label for="{group.name}-{field.name}">
-				<f:translate key="{group.name}.{field.name}" extensionName="{provider.form.extensionName}" default="{field.label}" />
-			</label>
-			<f:render partial="Fields/{fieldType}" arguments="{_all}" />
+			<f:if condition="{field.enable}">
+				<label for="{group.name}-{field.name}">
+					<f:translate key="{group.name}.{field.name}" extensionName="{provider.form.extensionName}" default="{field.label}" />
+				</label>
+				<f:render partial="Fields/{fieldType}" arguments="{_all}" />
+			</f:if>
 		</f:for>
 	</f:for>
 </fieldset>
