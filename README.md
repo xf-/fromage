@@ -219,6 +219,17 @@ instead implement a Pipe which saves a record. This could mean that you - the de
 box next to the submit button if the email Pipe is detected, informing the user that their response gets sent to this and that
 person, email, office, etc. rather than just stored in the system.
 
+### Template file layout
+
+Fromage uses a very standard template files structure - one that is designed to make it very easy to find and override the
+template files you need (e.g. one Partial template for each field type, each group of fields also has a Partial, a Layout is used).
+
+The structure is as follows:
+
+> _Template file layout_
+>
+> ![Template file layout](Documentation/Screenshots/6.png)
+
 ## Digging even deeper - the developers' perspective
 
 If you are a developer you have hopefully already caught the points completely. If not, here's a very short recap about the four
