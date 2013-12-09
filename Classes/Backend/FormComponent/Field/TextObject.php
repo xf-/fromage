@@ -38,4 +38,24 @@ class TextObject extends AbstractFieldObject {
 	 */
 	protected $name = 'text';
 
+	/**
+	 * CONSTRUCTOR
+	 */
+	public function initializeObject() {
+		parent::initializeObject();
+		$this->createSliderFieldAndWizard('rows');
+		$this->createSliderFieldAndWizard('cols');
+	}
+
+	/**
+	 * @param string $name
+	 */
+	protected function createSliderFieldAndWizard($name) {
+		$this->createField('Input', $name)
+				->setValidate('trim,int')
+				->setMinimum(1)
+				->setMaximum(100)
+				->setSize(2);
+	}
+
 }
