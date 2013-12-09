@@ -1,0 +1,14 @@
+<div style="display: table-row">
+	<f:for each="{field.fields}" as="columnisedFields">
+		<f:for each="{columnisedFields}" as="subField" key="fieldType">
+			<f:if condition="{subField.enable}">
+				<div style="display: table-cell; padding-right: 1em;">
+					<label for="{group.name}-{subField.name}">
+						<f:translate key="{group.name}.{subField.name}" extensionName="{provider.form.extensionName}" default="{subField.label}" />
+					</label>
+					<f:render partial="Fields/{fieldType}" arguments="{field: subField, group: group, provider: provider}" />
+				</div>
+			</f:if>
+		</f:for>
+	</f:for>
+</div>

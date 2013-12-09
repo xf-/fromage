@@ -15,7 +15,7 @@
 				<label for="{group.name}-{field.name}">
 					<f:translate key="{group.name}.{field.name}" extensionName="{provider.form.extensionName}" default="{field.label}" />
 				</label>
-				<f:render partial="Fields/{fieldType}" arguments="{_all}" />
+				<f:render partial="Fields/{fieldType}" arguments="{field: field, group: group, provider: provider}" />
 			</f:if>
 		</f:for>
 	</f:for>

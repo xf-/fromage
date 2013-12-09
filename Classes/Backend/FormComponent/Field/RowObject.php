@@ -24,31 +24,35 @@ namespace FluidTYPO3\Fromage\Backend\FormComponent\Field;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use FluidTYPO3\Fromage\Backend\FormComponent\AbstractFormObject;
+use FluidTYPO3\Fromage\Core;
 
 /**
- * Base class, Field-type Form Objects
+ * Field Row grouping Object
  *
- * Common base shared by for example Input, Select,
- * Text etc. field objects used in backend forms to
- * create a structure which translates to a Flux "Field"
- * component from the Flux Form namespace.
+ * Predefined Form component for adding Input field objects.
  *
  * @package Flux
  */
-class AbstractFieldObject extends AbstractFormObject {
+class RowObject extends AbstractFieldObject {
 
 	/**
-	 * CONSTRUCTOR
+	 * @var string
+	 */
+	protected $name = 'input';
+
+	/**
+	 * @return void
 	 */
 	public function initializeObject() {
-		$this->setLocalLanguageFileRelativePath($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fromage']['setup']['languageFileRelativePath']);
-		$this->createField('Checkbox', 'enable')
-				->setDefault(1);
-		$this->createField('Input', 'name');
-		$this->createField('Input', 'label');
-		$this->createField('Input', 'default');
-		$this->createField('Checkbox', 'required');
+		parent::initializeObject();
+		$this->createContainer('Section', 'fields');
+		$fields = Core::getFieldObjects();
+		foreach ($fields as $fieldTypeOrClassName) {
+			if ('row' === $fieldTypeOrClassName) {
+				continue;
+			}
+			$this->createFromageObject($fieldTypeOrClassName);
+		}
 	}
 
 }

@@ -24,9 +24,6 @@ namespace FluidTYPO3\Fromage\Backend\FormComponent;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use FluidTYPO3\Flux\Form\Container\Object;
-use FluidTYPO3\Fromage\Core;
-
 /**
  * Sheet Object
  *
@@ -37,7 +34,7 @@ use FluidTYPO3\Fromage\Core;
  *
  * @package Flux
  */
-class SheetObject extends Object {
+class SheetObject extends AbstractFormObject {
 
 	/**
 	 * @return void
@@ -58,20 +55,6 @@ class SheetObject extends Object {
 		if (NULL !== $name) {
 			$this->name = $name;
 		}
-	}
-
-	/**
-	 * @param string $type
-	 * @return void
-	 */
-	protected function createFromageObject($type) {
-		$namespace = 'FluidTYPO3\Fromage\Backend\FormComponent\Field\\';
-		if (TRUE === class_exists($type)) {
-			$className = $type;
-		} else {
-			$className = $namespace . ucfirst($type) . 'Object';
-		}
-		$this->get('fields')->createContainer($className, $type);
 	}
 
 }

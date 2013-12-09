@@ -18,6 +18,7 @@ if (!defined('TYPO3_MODE')) {
 
 // native field type registrations. Added using simple names which are easy to target (see Core class' doc comment)
 \FluidTYPO3\Fromage\Core::registerFieldObject('content');
+\FluidTYPO3\Fromage\Core::registerFieldObject('row');
 \FluidTYPO3\Fromage\Core::registerFieldObject('input');
 \FluidTYPO3\Fromage\Core::registerFieldObject('text');
 \FluidTYPO3\Fromage\Core::registerFieldObject('checkbox');

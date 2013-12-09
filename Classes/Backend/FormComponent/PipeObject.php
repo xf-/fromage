@@ -24,7 +24,6 @@ namespace FluidTYPO3\Fromage\Backend\FormComponent;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use FluidTYPO3\Flux\Form\Container\Object;
 use FluidTYPO3\Flux\Core;
 
 /**
@@ -37,7 +36,7 @@ use FluidTYPO3\Flux\Core;
  *
  * @package Flux
  */
-class PipeObject extends Object {
+class PipeObject extends AbstractFormObject {
 
 	/**
 	 * @return void

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <xliff version="1.0">
-  <file source-language="en" datatype="plaintext" original="messages" product-name="fromage" date="2013-12-07T23:48:00+01:00">
+  <file source-language="en" datatype="plaintext" original="messages" product-name="fromage" date="2013-12-09T03:35:23+01:00">
     <header/>
     <body>
       <trans-unit id="flux.form.sheets.options">
@@ -83,6 +83,9 @@
       </trans-unit>
       <trans-unit id="flux.form" xml:space="preserve">
         <source>Form</source>
+      </trans-unit>
+      <trans-unit id="flux.form.objects.row" xml:space="preserve">
+        <source>Row</source>
       </trans-unit>
     </body>
   </file>

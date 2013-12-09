@@ -1,5 +1,5 @@
 <?php
-namespace FluidTYPO3\Fromage\Backend\FormComponent\Field;
+namespace FluidTYPO3\Fromage\Backend\FormComponent;
 /***************************************************************
  *  Copyright notice
  *
@@ -24,31 +24,28 @@ namespace FluidTYPO3\Fromage\Backend\FormComponent\Field;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use FluidTYPO3\Fromage\Backend\FormComponent\AbstractFormObject;
+use FluidTYPO3\Flux\Form\Container\Object;
+use FluidTYPO3\Fromage\Core;
 
 /**
- * Base class, Field-type Form Objects
+ * Abstract Form Object
  *
- * Common base shared by for example Input, Select,
- * Text etc. field objects used in backend forms to
- * create a structure which translates to a Flux "Field"
- * component from the Flux Form namespace.
- *
- * @package Flux
+ * @package Fromage
  */
-class AbstractFieldObject extends AbstractFormObject {
+class AbstractFormObject extends Object {
 
 	/**
-	 * CONSTRUCTOR
+	 * @param string $type
+	 * @return void
 	 */
-	public function initializeObject() {
-		$this->setLocalLanguageFileRelativePath($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fromage']['setup']['languageFileRelativePath']);
-		$this->createField('Checkbox', 'enable')
-				->setDefault(1);
-		$this->createField('Input', 'name');
-		$this->createField('Input', 'label');
-		$this->createField('Input', 'default');
-		$this->createField('Checkbox', 'required');
+	protected function createFromageObject($type) {
+		$namespace = 'FluidTYPO3\Fromage\Backend\FormComponent\Field\\';
+		if (TRUE === class_exists($type)) {
+			$className = $type;
+		} else {
+			$className = $namespace . ucfirst($type) . 'Object';
+		}
+		$this->get('fields')->createContainer($className, $type);
 	}
 
 }
