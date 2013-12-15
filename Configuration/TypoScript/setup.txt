@@ -1,0 +1,6 @@
+plugin.tx_fromage.view {
+	extensionKey = fromage
+	templateRootPath = {$plugin.tx_fromage.view.templateRootPath}
+	partialRootPath = {$plugin.tx_fromage.view.partialRootPath}
+	layoutRootPath = {$plugin.tx_fromage.view.layoutRootPath}
+}

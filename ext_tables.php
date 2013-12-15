@@ -6,6 +6,7 @@ if (!defined('TYPO3_MODE')) {
 $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fromage']['setup'] = unserialize($_EXTCONF);
 $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fromage']['setup']['languageFileRelativePath'] = 'Resources/Private/Language/locallang.xlf';
 
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Fromage');
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin('FluidTYPO3.Fromage', 'Form', 'Fromage: Form', 'EXT:fromage/ext_icon.gif');
 
 $GLOBALS['TCA']['tt_content']['types']['fromage_form']['showitem'] = '--palette--;LLL:EXT:cms/locallang_ttc.xlf:palette.general;general,

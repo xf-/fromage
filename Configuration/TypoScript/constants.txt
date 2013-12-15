@@ -1,0 +1,5 @@
+plugin.tx_fromage.view {
+	templateRootPath = EXT:fromage/Resources/Private/Templates/
+	partialRootPath = EXT:fromage/Resources/Private/Partials/
+	layoutRootPath = EXT:fromage/Resources/Private/Layouts/
+}
