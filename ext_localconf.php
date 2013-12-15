@@ -14,16 +14,20 @@ if (!defined('TYPO3_MODE')) {
 	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 );
 
-\FluidTYPO3\Flux\Core::registerConfigurationProvider('FluidTYPO3\Fromage\Provider\FromageProvider');
+if (TRUE === class_exists('FluidTYPO3\Flux\Core')) {
+	\FluidTYPO3\Flux\Core::registerConfigurationProvider('FluidTYPO3\Fromage\Provider\FromageProvider');
+}
 
-// native field type registrations. Added using simple names which are easy to target (see Core class' doc comment)
-\FluidTYPO3\Fromage\Core::registerFieldObject('content');
-\FluidTYPO3\Fromage\Core::registerFieldObject('row');
-\FluidTYPO3\Fromage\Core::registerFieldObject('input');
-\FluidTYPO3\Fromage\Core::registerFieldObject('text');
-\FluidTYPO3\Fromage\Core::registerFieldObject('checkbox');
-\FluidTYPO3\Fromage\Core::registerFieldObject('select');
-\FluidTYPO3\Fromage\Core::registerFieldObject('relation');
+if (TRUE === class_exists('FluidTYPO3\Fromage\Core')) {
+	// native field type registrations. Added using simple names which are easy to target (see Core class' doc comment)
+	\FluidTYPO3\Fromage\Core::registerFieldObject('content');
+	\FluidTYPO3\Fromage\Core::registerFieldObject('row');
+	\FluidTYPO3\Fromage\Core::registerFieldObject('input');
+	\FluidTYPO3\Fromage\Core::registerFieldObject('text');
+	\FluidTYPO3\Fromage\Core::registerFieldObject('checkbox');
+	\FluidTYPO3\Fromage\Core::registerFieldObject('select');
+	\FluidTYPO3\Fromage\Core::registerFieldObject('relation');
 
-// native sheet types, there's only one of these and it is called "Grouping" and allows all fields to be used
-\FluidTYPO3\Fromage\Core::registerSheetObject('grouping');
+	// native sheet types, there's only one of these and it is called "Grouping" and allows all fields to be used
+	\FluidTYPO3\Fromage\Core::registerSheetObject('grouping');
+}
