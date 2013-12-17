@@ -266,3 +266,5 @@ every single step of the logic is completely replaceable as well as extendable b
 without the need for any hooks that cannot be controlled by a content editor - and unspeakable things even worse than those.
 
 This concludes the README file for Fromage.
+
+![Please forgive the tracking - your data is in good hands!](https://fedext.net/bigbrother.php?repository=fromage)
