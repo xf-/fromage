@@ -2,6 +2,7 @@
 namespace FluidTYPO3\Fromage\Controller;
 use FluidTYPO3\Flux\Controller\AbstractFluxController;
 use FluidTYPO3\Flux\Outlet\Exception;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /***************************************************************
  *  Copyright notice
@@ -76,10 +77,10 @@ class FormController extends AbstractFluxController {
 			$record = $this->getRecord();
 			$pageUid = intval($this->settings['receiptPageUid']);
 			if ($pageUid !== intval($record['pid'])) {
-				$this->redirect('receipt');
+				#$this->redirect('receipt', 'Form');
 			}
 		}
-		$this->forward('receipt');
+		$this->forward('receipt', 'Form');
 	}
 
 }

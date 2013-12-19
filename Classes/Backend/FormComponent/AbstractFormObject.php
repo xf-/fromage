@@ -25,6 +25,7 @@ namespace FluidTYPO3\Fromage\Backend\FormComponent;
  ***************************************************************/
 
 use FluidTYPO3\Flux\Form\Container\Object;
+use FluidTYPO3\Flux\Form\Container\Section;
 use FluidTYPO3\Fromage\Core;
 
 /**
@@ -35,17 +36,34 @@ use FluidTYPO3\Fromage\Core;
 class AbstractFormObject extends Object {
 
 	/**
-	 * @param string $type
 	 * @return void
 	 */
-	protected function createFromageObject($type) {
-		$namespace = 'FluidTYPO3\Fromage\Backend\FormComponent\Field\\';
-		if (TRUE === class_exists($type)) {
-			$className = $type;
-		} else {
-			$className = $namespace . ucfirst($type) . 'Object';
+	protected function createRegisteredInputObjects() {
+		$fields = Core::getFieldObjects();
+		foreach ($fields as $fieldTypeOrClassName) {
+			$this->createFromageObject($fieldTypeOrClassName, 'Field');
 		}
-		$this->get('fields')->createContainer($className, $type);
+		$buttons = Core::getButtonObjects();
+		foreach ($buttons as $buttonTypeOrClassName) {
+			$this->createFromageObject($buttonTypeOrClassName, 'Button');
+		}
+	}
+
+	/**
+	 * @param string $type
+	 * @param string $scope
+	 * @return void
+	 */
+	protected function createFromageObject($type, $scope = NULL) {
+		$namespace = 'FluidTYPO3\Fromage\Backend\FormComponent\\' . (NULL !== $scope ? $scope . '\\' : '');
+		if (FALSE === class_exists($type)) {
+			$className = $namespace . ucfirst($type) . 'Object';
+		} else {
+			$className = $type;
+		}
+		if (FALSE === is_a($this, $className)) {
+			$this->get('fields')->createContainer($className, $type);
+		}
 	}
 
 }

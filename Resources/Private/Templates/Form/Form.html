@@ -6,11 +6,12 @@
 </f:section>
 
 <f:section name="Main">
-	<f:form action="submit">
+	<f:form action="submit" controller="Form" pluginName="Form" extensionName="Fromage">
 		<f:for each="{structure}" as="grouping">
 			<f:for each="{grouping}" as="group" key="type">
 				<f:render partial="Grouping/{type}" arguments="{_all}" />
 			</f:for>
 		</f:for>
+
 	</f:form>
 </f:section>

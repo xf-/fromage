@@ -1,5 +1,5 @@
 <?php
-namespace FluidTYPO3\Fromage\Backend\FormComponent\Field;
+namespace FluidTYPO3\Fromage\Backend\FormComponent\Button;
 /***************************************************************
  *  Copyright notice
  *
@@ -24,29 +24,11 @@ namespace FluidTYPO3\Fromage\Backend\FormComponent\Field;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use FluidTYPO3\Fromage\Core;
-
 /**
- * Field Row grouping Object
+ * Submit button object
  *
- * Predefined Form component for adding Input field objects.
- *
- * @package Flux
+ * @package Fromage
  */
-class RowObject extends AbstractFieldObject {
-
-	/**
-	 * @var string
-	 */
-	protected $name = 'input';
-
-	/**
-	 * @return void
-	 */
-	public function initializeObject() {
-		parent::initializeObject();
-		$this->createContainer('Section', 'fields');
-		$this->createRegisteredInputObjects();
-	}
+class ResetObject extends AbstractButtonObject {
 
 }

@@ -9,6 +9,9 @@
       <trans-unit id="flux.form.sheets.structure" xml:space="preserve">
         <source>Form structure</source>
       </trans-unit>
+      <trans-unit id="flux.form.section.structure" xml:space="preserve">
+        <source>Components</source>
+      </trans-unit>
       <trans-unit id="flux.form.sheets.pipesIn" xml:space="preserve">
         <source>Pre-processing</source>
       </trans-unit>
@@ -44,6 +47,15 @@
       </trans-unit>
       <trans-unit id="flux.form.objects.grouping" xml:space="preserve">
         <source>Grouping</source>
+      </trans-unit>
+      <trans-unit id="flux.form.objects.submit" xml:space="preserve">
+        <source>Submit button</source>
+      </trans-unit>
+      <trans-unit id="flux.form.objects.reset" xml:space="preserve">
+        <source>Reset button</source>
+      </trans-unit>
+      <trans-unit id="flux.form.objects.button" xml:space="preserve">
+        <source>Button</source>
       </trans-unit>
       <trans-unit id="flux.form.fields.type" xml:space="preserve">
         <source>Type</source>

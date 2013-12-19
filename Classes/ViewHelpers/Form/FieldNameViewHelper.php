@@ -1,5 +1,5 @@
 <?php
-namespace FluidTYPO3\Fromage\Backend\FormComponent\Field;
+namespace FluidTYPO3\Fromage\ViewHelpers\Form;
 /***************************************************************
  *  Copyright notice
  *
@@ -24,29 +24,26 @@ namespace FluidTYPO3\Fromage\Backend\FormComponent\Field;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use FluidTYPO3\Fromage\Core;
+use TYPO3\CMS\Fluid\ViewHelpers\Form\AbstractFormFieldViewHelper;
 
 /**
- * Field Row grouping Object
+ * Field name generator
  *
- * Predefined Form component for adding Input field objects.
+ * Renders a field name for a given Field Component definition
  *
- * @package Flux
+ * @package Fromage
  */
-class RowObject extends AbstractFieldObject {
+class FieldNameViewHelper extends AbstractFormFieldViewHelper {
 
 	/**
-	 * @var string
+	 * @param array $field
+	 * @return string
 	 */
-	protected $name = 'input';
-
-	/**
-	 * @return void
-	 */
-	public function initializeObject() {
-		parent::initializeObject();
-		$this->createContainer('Section', 'fields');
-		$this->createRegisteredInputObjects();
+	public function render(array $field) {
+		$nameParts = explode('.', $field['name']);
+		$newName = 'data[' . implode('][', $nameParts) . ']';
+		$this->registerFieldNameForFormTokenGeneration($newName);
+		return $newName;
 	}
 
 }

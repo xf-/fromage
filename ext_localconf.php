@@ -28,6 +28,11 @@ if (TRUE === class_exists('FluidTYPO3\Fromage\Core')) {
 	\FluidTYPO3\Fromage\Core::registerFieldObject('select');
 	\FluidTYPO3\Fromage\Core::registerFieldObject('relation');
 
+	// native button types
+	\FluidTYPO3\Fromage\Core::registerButtonObject('submit');
+	\FluidTYPO3\Fromage\Core::registerButtonObject('reset');
+	\FluidTYPO3\Fromage\Core::registerButtonObject('button');
+
 	// native sheet types, there's only one of these and it is called "Grouping" and allows all fields to be used
 	\FluidTYPO3\Fromage\Core::registerSheetObject('grouping');
 }

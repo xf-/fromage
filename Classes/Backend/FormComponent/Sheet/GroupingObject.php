@@ -25,6 +25,7 @@ namespace FluidTYPO3\Fromage\Backend\FormComponent\Sheet;
  ***************************************************************/
 
 use FluidTYPO3\Flux\Form\Container\Object;
+use FluidTYPO3\Flux\Form\Container\Section;
 use FluidTYPO3\Flux\FormInterface;
 use FluidTYPO3\Fromage\Backend\FormComponent\SheetObject;
 use FluidTYPO3\Fromage\Core;
@@ -48,10 +49,10 @@ class GroupingObject extends SheetObject {
 	 */
 	public function initializeObject() {
 		parent::initializeObject();
-		$fields = Core::getFieldObjects();
-		foreach ($fields as $fieldTypeOrClassName) {
-			$this->createFromageObject($fieldTypeOrClassName);
-		}
+		/** @var Section $section */
+		$section = $this->get('fields');
+		$this->createRegisteredInputObjects($section);
+
 	}
 
 }

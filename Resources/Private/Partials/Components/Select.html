@@ -2,5 +2,5 @@
 {namespace fromage=FluidTYPO3\Fromage\ViewHelpers}
 
 {f:if(condition: field.multiple, then: 'multiple', else: '') -> v:var.convert(type: 'string') -> v:var.set(name: 'multiple')}
-<fromage:form.select name="{field.name}" csv="{field.items}" table="{field.table}" options="{field.customItems}"
+<fromage:form.select name="{fcc:form.fieldName(field: field)}" csv="{field.items}" table="{field.table}" options="{field.customItems}"
                      value="{field.default}" id="{group.name}-{field.name}" size="{field.size}" multiple="{multiple}" />

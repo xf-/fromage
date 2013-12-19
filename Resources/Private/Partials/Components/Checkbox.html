@@ -1,0 +1,4 @@
+{namespace fcc=FluidTYPO3\Fromage\ViewHelpers}
+<f:form.hidden name="{fcc:form.fieldName(field: field)}" />
+<f:form.checkbox value="{f:if(condition: field.value, then: field.value, else: 1)}" checked="{f:if(condition: field.checked, then: 'checked')}"
+                 id="{group.name}-{field.name}" name="{fcc:form.fieldName(field: field)}" />

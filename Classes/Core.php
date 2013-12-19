@@ -71,6 +71,11 @@ class Core {
 	/**
 	 * @var array
 	 */
+	protected static $buttons = array();
+
+	/**
+	 * @var array
+	 */
 	protected static $sheets = array();
 
 	/**
@@ -88,6 +93,16 @@ class Core {
 	 * @param string $insteadOfNativeType
 	 * @return void
 	 */
+	public static function registerButtonObject($typeOrClassName, $insteadOfNativeType = NULL) {
+		$key = NULL === $insteadOfNativeType ? $typeOrClassName : $insteadOfNativeType;
+		self::$buttons[$key] = $typeOrClassName;
+	}
+
+	/**
+	 * @param string $typeOrClassName
+	 * @param string $insteadOfNativeType
+	 * @return void
+	 */
 	public static function registerSheetObject($typeOrClassName, $insteadOfNativeType = NULL) {
 		$key = NULL === $insteadOfNativeType ? $typeOrClassName : $insteadOfNativeType;
 		self::$sheets[$key] = $typeOrClassName;
@@ -98,6 +113,13 @@ class Core {
 	 */
 	public static function getFieldObjects() {
 		return array_values(self::$fields);
+	}
+
+	/**
+	 * @return array
+	 */
+	public static function getButtonObjects() {
+		return array_values(self::$buttons);
 	}
 
 	/**

@@ -24,12 +24,12 @@ namespace FluidTYPO3\Fromage\Provider;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use FluidTYPO3\Flux\Form;
 use FluidTYPO3\Flux\Form\Container\Grid;
 use FluidTYPO3\Flux\Form\Container\Sheet;
 use FluidTYPO3\Flux\Provider\AbstractProvider;
 use FluidTYPO3\Flux\Provider\ProviderInterface;
 use FluidTYPO3\Fromage\Core;
+use FluidTYPO3\Fromage\Form\StandardForm;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
@@ -44,7 +44,7 @@ class FromageProvider extends AbstractProvider implements ProviderInterface {
 	/**
 	 * @var integer
 	 */
-	protected $priority = 0;
+	protected $priority = 100;
 
 	/**
 	 * @var string
@@ -77,13 +77,12 @@ class FromageProvider extends AbstractProvider implements ProviderInterface {
 	 */
 	public function getForm(array $row = array()) {
 		$extensionKey = $this->getExtensionKey($row);
-		$form = Form::create();
+		$variables = $this->configurationService->convertFlexFormContentToArray($row[$this->fieldName]);
+		/** @var StandardForm $form */
+		$formClassName = $this->getFormClassName($row);
+		$form = $this->objectManager->get($formClassName);
 		$form->setExtensionName($extensionKey);
-		$form->setId('form');
-		$form->setLocalLanguageFileRelativePath($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fromage']['setup']['languageFileRelativePath']);
-		$this->createStructureSheet($form);
-		$this->createPipeSheet($form, 'pipesIn');
-		$this->createPipeSheet($form, 'pipesOut');
+		$form->setConfiguration($variables);
 		return $form;
 	}
 
@@ -142,15 +141,15 @@ class FromageProvider extends AbstractProvider implements ProviderInterface {
 		}
 		$hrStyle = 'padding: 0px; border: 1px solid #ededed; clear: both; margin-top: 1.5em;';
 		$content = array();
-		foreach ($values['structure'] as $grouping) {
+		foreach ((array) $values['structure'] as $grouping) {
 			$content[] = $this->renderPreviewFloatBlock($grouping['sheet']['name'], 'test', 'Group');
 		}
 		$content[] = '<hr style="' . $hrStyle . '" />';
-		foreach ($values['pipesIn'] as $pipe) {
+		foreach ((array) $values['pipesIn'] as $pipe) {
 			$content[] = $this->renderPreviewFloatBlock($pipe['pipe']['name'], 'test', 'Pipe');
 		}
 		$content[] = '<hr style="height: 1px; padding: 0px; border: 1px solid #ededed; clear: both; margin-top: 0.5em;" />';
-		foreach ($values['pipesOut'] as $pipe) {
+		foreach ((array) $values['pipesOut'] as $pipe) {
 			$content[] = $this->renderPreviewFloatBlock($pipe['pipe']['name'], 'test', 'Pipe');
 		}
 		$content[] = '<div style="clear: both;"></div>';
@@ -178,27 +177,12 @@ class FromageProvider extends AbstractProvider implements ProviderInterface {
 	}
 
 	/**
-	 * @param Form $form
-	 * @return void
+	 * @param array $row
+	 * @return string
 	 */
-	protected function createStructureSheet(Form $form) {
-		$sheet = $form->createContainer('Sheet', 'structure')->createContainer('Section', 'structure');
-		$sheets = Core::getSheetObjects();
-		$namespace = 'FluidTYPO3\Fromage\Backend\FormComponent\Sheet\\';
-		foreach ($sheets as $sheetTypeOrClassName) {
-			$className = TRUE === class_exists($sheetTypeOrClassName) ? $sheetTypeOrClassName : $namespace . ucfirst($sheetTypeOrClassName) . 'Object';
-			$sheet->createContainer($className, NULL);
-		}
-	}
-
-	/**
-	 * @param Form $form
-	 * @param string $name
-	 * @return void
-	 */
-	protected function createPipeSheet(Form $form, $name) {
-		$sheet = $form->createContainer('Sheet', $name)->createContainer('Section', $name);
-		$sheet->createContainer('FluidTYPO3\Fromage\Backend\FormComponent\PipeObject', 'pipe');
+	protected function getFormClassName(array $row) {
+		$formClassName = $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fromage']['setup']['defaultFormClassName'];
+		return $formClassName;
 	}
 
 }
