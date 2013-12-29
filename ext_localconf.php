@@ -4,8 +4,9 @@ if (!defined('TYPO3_MODE')) {
 }
 
 $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fromage']['setup'] = unserialize($_EXTCONF);
-$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fromage']['setup']['languageFileRelativePath'] = 'Resources/Private/Language/locallang.xlf';
-$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fromage']['setup']['defaultFormClassName'] = 'FluidTYPO3\Fromage\Form\StandardForm';
+if (FALSE === isset($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fromage']['setup']['defaultFormClassName'])) {
+	$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fromage']['setup']['defaultFormClassName'] = 'FluidTYPO3\Fromage\Form\StandardForm';
+}
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin('FluidTYPO3.Fromage', 'Form',
 	array('Form' => 'form,submit,receipt'),

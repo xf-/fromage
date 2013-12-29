@@ -96,7 +96,6 @@ class FromageProvider extends AbstractProvider implements ProviderInterface {
 		$areas = $this->recursivelyFetchAllContentAreaNames($values['structure']);
 		/** @var Grid $grid */
 		$grid = Grid::create();
-		$grid->setLocalLanguageFileRelativePath($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fromage']['setup']['languageFileRelativePath']);
 		$grid->setExtensionName($extensionKey);
 		foreach ($areas as $areaName) {
 			$grid->createContainer('Row', 'row')->createContainer('Column', 'column')->createContainer('Content', $areaName)->setLabel($areaName);
@@ -129,9 +128,8 @@ class FromageProvider extends AbstractProvider implements ProviderInterface {
 	 */
 	public function getPreview(array $row) {
 		$values = $this->getFlexFormValues($row);
-		$parentsPreviewVariables = parent::getPreview($row);
 		if ($row['CType'] !== $this->contentObjectType) {
-			return $parentsPreviewVariables;
+			return array(NULL, NULL, TRUE);
 		}
 		if (FALSE === isset($values['pipesIn'])) {
 			$values['pipesIn'] = array();
@@ -153,7 +151,6 @@ class FromageProvider extends AbstractProvider implements ProviderInterface {
 			$content[] = $this->renderPreviewFloatBlock($pipe['pipe']['name'], 'test', 'Pipe');
 		}
 		$content[] = '<div style="clear: both;"></div>';
-		$content[] = $parentsPreviewVariables[1];
 		$html = implode(LF, $content);
 		return array(NULL, $html, FALSE);
 	}
