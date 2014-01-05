@@ -44,7 +44,7 @@ class FromageProvider extends AbstractProvider implements ProviderInterface {
 	/**
 	 * @var integer
 	 */
-	protected $priority = 100;
+	protected $priority = 0;
 
 	/**
 	 * @var string
