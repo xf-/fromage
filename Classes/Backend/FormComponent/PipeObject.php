@@ -24,8 +24,6 @@ namespace FluidTYPO3\Fromage\Backend\FormComponent;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use FluidTYPO3\Flux\Core;
-
 /**
  * Sheet Object
  *
@@ -37,23 +35,5 @@ use FluidTYPO3\Flux\Core;
  * @package Flux
  */
 class PipeObject extends AbstractFormObject {
-
-	/**
-	 * @return void
-	 */
-	public function initializeObject() {
-		$this->setLocalLanguageFileRelativePath($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fromage']['setup']['languageFileRelativePath']);
-		$namespace = 'FluidTYPO3\Flux\Outlet\Pipe\\';
-		$pipes = Core::getPipes();
-		$type = $this->createField('Select', 'type');
-		$options = array();
-		foreach ($pipes as $pipeTypeOrClassName) {
-			$className = TRUE === class_exists($pipeTypeOrClassName) ? $pipeTypeOrClassName : $namespace . ucfirst($pipeTypeOrClassName) . 'Pipe';
-			$instance = $this->objectManager->get($className);
-			$label = $instance->getLabel();
-			$options[$className] = $label;
-		}
-		$type->setItems($options);
-	}
 
 }

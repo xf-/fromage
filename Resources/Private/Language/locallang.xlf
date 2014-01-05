@@ -1,110 +1,170 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <xliff version="1.0">
-  <file source-language="en" datatype="plaintext" original="messages" product-name="fromage" date="2013-12-09T03:56:44+01:00">
-    <header/>
-    <body>
-      <trans-unit id="flux.form.sheets.options">
-        <source>Data Handling</source>
-      </trans-unit>
-      <trans-unit id="flux.form.sheets.structure" xml:space="preserve">
-        <source>Form structure</source>
-      </trans-unit>
-      <trans-unit id="flux.form.section.structure" xml:space="preserve">
-        <source>Components</source>
-      </trans-unit>
-      <trans-unit id="flux.form.sheets.pipesIn" xml:space="preserve">
-        <source>Pre-processing</source>
-      </trans-unit>
-      <trans-unit id="flux.form.sheets.pipesOut" xml:space="preserve">
-        <source>Post-processing</source>
-      </trans-unit>
-      <trans-unit id="flux.form.objects.sheet" xml:space="preserve">
-        <source>Grouping</source>
-      </trans-unit>
-      <trans-unit id="flux.form.fields.name" xml:space="preserve">
-        <source>Name (a-z, 0-9, no special chars allowed)</source>
-      </trans-unit>
-      <trans-unit id="flux.form.objects.pipe" xml:space="preserve">
-        <source>Data Pipe</source>
-      </trans-unit>
-      <trans-unit id="flux.form.objects.content" xml:space="preserve">
-        <source>Content area</source>
-      </trans-unit>
-      <trans-unit id="flux.form.objects.input" xml:space="preserve">
-        <source>Input</source>
-      </trans-unit>
-      <trans-unit id="flux.form.objects.text" xml:space="preserve">
-        <source>Text</source>
-      </trans-unit>
-      <trans-unit id="flux.form.objects.select" xml:space="preserve">
-        <source>Select</source>
-      </trans-unit>
-      <trans-unit id="flux.form.objects.relation" xml:space="preserve">
-        <source>Relation</source>
-      </trans-unit>
-      <trans-unit id="flux.form.objects.checkbox" xml:space="preserve">
-        <source>Checkbox</source>
-      </trans-unit>
-      <trans-unit id="flux.form.objects.grouping" xml:space="preserve">
-        <source>Grouping</source>
-      </trans-unit>
-      <trans-unit id="flux.form.objects.submit" xml:space="preserve">
-        <source>Submit button</source>
-      </trans-unit>
-      <trans-unit id="flux.form.objects.reset" xml:space="preserve">
-        <source>Reset button</source>
-      </trans-unit>
-      <trans-unit id="flux.form.objects.button" xml:space="preserve">
-        <source>Button</source>
-      </trans-unit>
-      <trans-unit id="flux.form.fields.type" xml:space="preserve">
-        <source>Type</source>
-      </trans-unit>
-      <trans-unit id="flux.form.fields.required" xml:space="preserve">
-        <source>Required field</source>
-      </trans-unit>
-      <trans-unit id="flux.form.fields.label" xml:space="preserve">
-        <source>Label, LLL:EXT supported (empty value will use "name" and try auto-translation)</source>
-      </trans-unit>
-      <trans-unit id="flux.form.fields.checked" xml:space="preserve">
-        <source>Checked by default</source>
-      </trans-unit>
-      <trans-unit id="flux.form.fields.items" xml:space="preserve">
-        <source>Selectable values (CSV here or custom options below)</source>
-      </trans-unit>
-      <trans-unit id="flux.form.objects.item" xml:space="preserve">
-        <source>Option</source>
-      </trans-unit>
-      <trans-unit id="flux.form.fields.value" xml:space="preserve">
-        <source>Value</source>
-      </trans-unit>
-      <trans-unit id="flux.form.fields.default" xml:space="preserve">
-        <source>Default value</source>
-      </trans-unit>
-      <trans-unit id="flux.form.fields.table" xml:space="preserve">
-        <source>Table</source>
-      </trans-unit>
-      <trans-unit id="flux.form.fields.size" xml:space="preserve">
-        <source>Size</source>
-      </trans-unit>
-      <trans-unit id="flux.form.fields.multiple" xml:space="preserve">
-        <source>Allow multiple selections</source>
-      </trans-unit>
-      <trans-unit id="flux.form.fields.enable" xml:space="preserve">
-        <source>Enabled</source>
-      </trans-unit>
-      <trans-unit id="flux.form" xml:space="preserve">
-        <source>Form</source>
-      </trans-unit>
-      <trans-unit id="flux.form.objects.row" xml:space="preserve">
-        <source>Row</source>
-      </trans-unit>
-      <trans-unit id="flux.form.fields.rows" xml:space="preserve">
-        <source>No. of character rows</source>
-      </trans-unit>
-      <trans-unit id="flux.form.fields.cols" xml:space="preserve">
-        <source>No. of character columns</source>
-      </trans-unit>
-    </body>
-  </file>
+	<file source-language="en" datatype="plaintext" original="messages" product-name="fromage" date="2014-01-05T14:26:29+01:00">
+		<header/>
+		<body>
+			<trans-unit id="flux.form.sheets.options">
+				<source>Data Handling</source>
+			</trans-unit>
+			<trans-unit id="flux.form.sheets.structure" xml:space="preserve">
+				<source>Form structure</source>
+			</trans-unit>
+			<trans-unit id="flux.form.section.structure" xml:space="preserve">
+				<source>Components</source>
+			</trans-unit>
+			<trans-unit id="flux.form.sheets.pipesIn" xml:space="preserve">
+				<source>Pre-processing</source>
+			</trans-unit>
+			<trans-unit id="flux.form.sheets.pipesOut" xml:space="preserve">
+				<source>Post-processing</source>
+			</trans-unit>
+			<trans-unit id="flux.form.objects.sheet" xml:space="preserve">
+				<source>Grouping</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.name" xml:space="preserve">
+				<source>Name (a-z, 0-9, no special chars allowed)</source>
+			</trans-unit>
+			<trans-unit id="flux.form.objects.pipe" xml:space="preserve">
+				<source>Data Pipe</source>
+			</trans-unit>
+			<trans-unit id="flux.form.objects.content" xml:space="preserve">
+				<source>Content area</source>
+			</trans-unit>
+			<trans-unit id="flux.form.objects.input" xml:space="preserve">
+				<source>Input</source>
+			</trans-unit>
+			<trans-unit id="flux.form.objects.text" xml:space="preserve">
+				<source>Text</source>
+			</trans-unit>
+			<trans-unit id="flux.form.objects.select" xml:space="preserve">
+				<source>Select</source>
+			</trans-unit>
+			<trans-unit id="flux.form.objects.relation" xml:space="preserve">
+				<source>Relation</source>
+			</trans-unit>
+			<trans-unit id="flux.form.objects.checkbox" xml:space="preserve">
+				<source>Checkbox</source>
+			</trans-unit>
+			<trans-unit id="flux.form.objects.grouping" xml:space="preserve">
+				<source>Grouping</source>
+			</trans-unit>
+			<trans-unit id="flux.form.objects.submit" xml:space="preserve">
+				<source>Submit button</source>
+			</trans-unit>
+			<trans-unit id="flux.form.objects.reset" xml:space="preserve">
+				<source>Reset button</source>
+			</trans-unit>
+			<trans-unit id="flux.form.objects.button" xml:space="preserve">
+				<source>Button</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.type" xml:space="preserve">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.required" xml:space="preserve">
+				<source>Required field</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.label" xml:space="preserve">
+				<source>Label, LLL:EXT supported (empty value will use "name" and try auto-translation)</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.checked" xml:space="preserve">
+				<source>Checked by default</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.items" xml:space="preserve">
+				<source>Selectable values (CSV here or custom options below)</source>
+			</trans-unit>
+			<trans-unit id="flux.form.objects.item" xml:space="preserve">
+				<source>Option</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.value" xml:space="preserve">
+				<source>Value</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.default" xml:space="preserve">
+				<source>Default value</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.table" xml:space="preserve">
+				<source>Table</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.size" xml:space="preserve">
+				<source>Size</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.multiple" xml:space="preserve">
+				<source>Allow multiple selections</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.enable" xml:space="preserve">
+				<source>Enabled</source>
+			</trans-unit>
+			<trans-unit id="flux.form" xml:space="preserve">
+				<source>Form</source>
+			</trans-unit>
+			<trans-unit id="flux.form.objects.row" xml:space="preserve">
+				<source>Row</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.rows" xml:space="preserve">
+				<source>No. of character rows</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.cols" xml:space="preserve">
+				<source>No. of character columns</source>
+			</trans-unit>
+			<trans-unit id="flux.form.sections.structure" xml:space="preserve">
+				<source>Field structure</source>
+			</trans-unit>
+			<trans-unit id="flux.form.sections.fields" xml:space="preserve">
+				<source>Fields</source>
+			</trans-unit>
+			<trans-unit id="flux.form.sections.customItems" xml:space="preserve">
+				<source>Items</source>
+			</trans-unit>
+			<trans-unit id="flux.form.objects.item.label" xml:space="preserve">
+				<source>Label</source>
+			</trans-unit>
+			<trans-unit id="flux.form.objects.item.value" xml:space="preserve">
+				<source>Value</source>
+			</trans-unit>
+			<trans-unit id="flux.form.sections.pipesIn" xml:space="preserve">
+				<source>Input data processing</source>
+			</trans-unit>
+			<trans-unit id="flux.form.sections.pipesOut" xml:space="preserve">
+				<source>Output data processing</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.class" xml:space="preserve">
+				<source>Pipe class</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.message" xml:space="preserve">
+				<source>Message</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.title" xml:space="preserve">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.severity" xml:space="preserve">
+				<source>Severity/level</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.extensionName" xml:space="preserve">
+				<source>Extension name</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.controller" xml:space="preserve">
+				<source>Controller name (UpperCamelCase)</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.action" xml:space="preserve">
+				<source>Action name (lowerCamelCase, excluding "Action" method name suffix)</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.subject" xml:space="preserve">
+				<source>Email subject</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.body" xml:space="preserve">
+				<source>Email body</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.recipient" xml:space="preserve">
+				<source><![CDATA[Recipent - email only, or "Name Lastname <email@domain.com>" format]]></source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.sender" xml:space="preserve">
+				<source><![CDATA[Sender - email only, or "Name Lastname <email@domain.com>" format]]></source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.typeConverter" xml:space="preserve">
+				<source>TypeConverter class name</source>
+			</trans-unit>
+			<trans-unit id="flux.form.fields.targetType" xml:space="preserve">
+				<source>Convert to this type (fx, "integer", "DateTime", "array" etc. as supported by selected TypeConverter)</source>
+			</trans-unit>
+		</body>
+	</file>
 </xliff>

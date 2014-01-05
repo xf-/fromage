@@ -40,7 +40,6 @@ class SheetObject extends AbstractFormObject {
 	 * @return void
 	 */
 	public function initializeObject() {
-		$this->setLocalLanguageFileRelativePath($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fromage']['setup']['languageFileRelativePath']);
 		$this->createField('Input', 'name')
 				->setDefault($this->name);
 		$this->createField('Input', 'label');

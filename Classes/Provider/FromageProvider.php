@@ -137,18 +137,9 @@ class FromageProvider extends AbstractProvider implements ProviderInterface {
 		if (FALSE === isset($values['pipesOut'])) {
 			$values['pipesOut'] = array();
 		}
-		$hrStyle = 'padding: 0px; border: 1px solid #ededed; clear: both; margin-top: 1.5em;';
 		$content = array();
 		foreach ((array) $values['structure'] as $grouping) {
 			$content[] = $this->renderPreviewFloatBlock($grouping['sheet']['name'], 'test', 'Group');
-		}
-		$content[] = '<hr style="' . $hrStyle . '" />';
-		foreach ((array) $values['pipesIn'] as $pipe) {
-			$content[] = $this->renderPreviewFloatBlock($pipe['pipe']['name'], 'test', 'Pipe');
-		}
-		$content[] = '<hr style="height: 1px; padding: 0px; border: 1px solid #ededed; clear: both; margin-top: 0.5em;" />';
-		foreach ((array) $values['pipesOut'] as $pipe) {
-			$content[] = $this->renderPreviewFloatBlock($pipe['pipe']['name'], 'test', 'Pipe');
 		}
 		$content[] = '<div style="clear: both;"></div>';
 		$html = implode(LF, $content);

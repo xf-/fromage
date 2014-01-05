@@ -42,7 +42,6 @@ class AbstractFieldObject extends AbstractFormObject {
 	 * CONSTRUCTOR
 	 */
 	public function initializeObject() {
-		$this->setLocalLanguageFileRelativePath($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fromage']['setup']['languageFileRelativePath']);
 		$this->createField('Checkbox', 'enable')
 				->setDefault(1);
 		$this->createField('Input', 'name');
