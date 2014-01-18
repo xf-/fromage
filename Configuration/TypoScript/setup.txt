@@ -1,5 +1,5 @@
 plugin.tx_fromage.view {
-	extensionKey = fromage
+	extensionKey = FluidTYPO3.Fromage
 	templateRootPath = {$plugin.tx_fromage.view.templateRootPath}
 	partialRootPath = {$plugin.tx_fromage.view.partialRootPath}
 	layoutRootPath = {$plugin.tx_fromage.view.layoutRootPath}
