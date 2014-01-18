@@ -38,6 +38,14 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 class FormController extends AbstractFluxController {
 
 	/**
+	 * @throws \RuntimeException
+	 * @return void
+	 */
+	protected function initializeProvider() {
+		$this->provider = $this->objectManager->get('FluidTYPO3\Fromage\Provider\FromageProvider');
+	}
+
+	/**
 	 * @param array $data
 	 * @param \FluidTYPO3\Flux\Outlet\Exception $error
 	 * @return void
