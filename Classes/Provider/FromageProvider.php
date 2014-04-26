@@ -127,10 +127,10 @@ class FromageProvider extends AbstractProvider implements ProviderInterface {
 	 * @return array
 	 */
 	public function getPreview(array $row) {
-		$values = $this->getFlexFormValues($row);
 		if ($row['CType'] !== $this->contentObjectType) {
 			return array(NULL, NULL, TRUE);
 		}
+		$values = $this->getFlexFormValues($row);
 		if (FALSE === isset($values['pipesIn'])) {
 			$values['pipesIn'] = array();
 		}
