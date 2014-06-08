@@ -1,6 +1,6 @@
-{namespace v=Tx_Vhs_ViewHelpers}
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
 {namespace fromage=FluidTYPO3\Fromage\ViewHelpers}
 
-{f:if(condition: field.multiple, then: 'multiple', else: '') -> v:var.convert(type: 'string') -> v:var.set(name: 'multiple')}
+{f:if(condition: field.multiple, then: 'multiple', else: '') -> v:variable.convert(type: 'string') -> v:variable.set(name: 'multiple')}
 <fromage:form.select name="{fcc:form.fieldName(field: field)}" csv="{field.items}" table="{field.table}" options="{field.customItems}"
                      value="{field.default}" id="{group.name}-{field.name}" size="{field.size}" multiple="{multiple}" />
