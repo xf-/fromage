@@ -25,14 +25,9 @@ namespace FluidTYPO3\Fromage\Provider;
  ***************************************************************/
 
 use FluidTYPO3\Flux\Form\Container\Grid;
-use FluidTYPO3\Flux\Form\Container\Sheet;
 use FluidTYPO3\Flux\Provider\AbstractProvider;
 use FluidTYPO3\Flux\Provider\ProviderInterface;
-use FluidTYPO3\Fromage\Core;
 use FluidTYPO3\Fromage\Form\StandardForm;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /**
  * Fromage Provider
