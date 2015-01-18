@@ -24,8 +24,6 @@ namespace FluidTYPO3\Fromage\Backend\FormComponent\Field;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use FluidTYPO3\Fromage\Core;
-
 /**
  * Field Row grouping Object
  *

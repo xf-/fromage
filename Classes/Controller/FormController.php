@@ -2,7 +2,6 @@
 namespace FluidTYPO3\Fromage\Controller;
 use FluidTYPO3\Flux\Controller\AbstractFluxController;
 use FluidTYPO3\Flux\Outlet\Exception;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /***************************************************************
  *  Copyright notice

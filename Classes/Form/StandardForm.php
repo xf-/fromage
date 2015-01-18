@@ -29,7 +29,6 @@ use FluidTYPO3\Flux\Core as FluxCore;
 use FluidTYPO3\Fromage\Core;
 use FluidTYPO3\Fromage\Backend\FormComponent\PipeObject;
 use FluidTYPO3\Flux\Outlet\Pipe\PipeInterface;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /**
  * @package Fromage

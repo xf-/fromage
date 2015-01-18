@@ -25,7 +25,6 @@ namespace FluidTYPO3\Fromage\Backend\FormComponent;
  ***************************************************************/
 
 use FluidTYPO3\Flux\Form\Container\Object;
-use FluidTYPO3\Flux\Form\Container\Section;
 use FluidTYPO3\Fromage\Core;
 
 /**
